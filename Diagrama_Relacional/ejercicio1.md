@@ -1,3 +1,4 @@
+![ejercicio1](1.drawio.png)
 <mxfile host="app.diagrams.net">
 <diagram name="Página-1" id="f_YoYmgIZCG_F2mfMewB">
 <mxGraphModel dx="563" dy="293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">

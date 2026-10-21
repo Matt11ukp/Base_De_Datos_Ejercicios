@@ -1,4 +1,6 @@
-![ejercicio1](1.drawio.png)
+<img width="601" height="209" alt="1 drawio" src="https://github.com/user-attachments/assets/36ed9600-3b30-41f9-8955-af80ac3b6fd9" />
+
+```.xml
 <mxfile host="app.diagrams.net">
 <diagram name="Página-1" id="f_YoYmgIZCG_F2mfMewB">
 <mxGraphModel dx="563" dy="293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">

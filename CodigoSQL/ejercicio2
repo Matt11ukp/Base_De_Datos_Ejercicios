@@ -1,0 +1,30 @@
+CREATE TABLE Cliente (
+    Id_cliente VARCHAR(10) PRIMARY KEY
+);
+
+CREATE TABLE Mesero (
+    Id_mesero VARCHAR(10) PRIMARY KEY
+);
+
+CREATE TABLE Pedido (
+    id_Pedido VARCHAR(10) PRIMARY KEY,
+    Precio DECIMAL(10,2) NOT NULL,
+    cantidad INT NOT NULL,
+    id_cliente VARCHAR(10) NOT NULL,
+    id_mesero VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(Id_cliente),
+    FOREIGN KEY (id_mesero) REFERENCES Mesero(Id_mesero)
+);
+
+CREATE TABLE Plato (
+    id_Plato VARCHAR(10) PRIMARY KEY,
+    precio_actual DECIMAL(10,2) NOT NULL,
+    id_pedido VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_pedido) REFERENCES Pedido(id_Pedido)
+);
+
+CREATE TABLE Categoria (
+    Id_categoria VARCHAR(10) PRIMARY KEY,
+    id_plato VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_plato) REFERENCES Plato(id_Plato)
+);

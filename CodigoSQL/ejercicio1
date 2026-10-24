@@ -1,0 +1,17 @@
+CREATE TABLE Socio (
+    id_socio VARCHAR(10) PRIMARY KEY
+);
+
+CREATE TABLE Libro (
+    id_libro VARCHAR(10) PRIMARY KEY,
+    fecha_retiro DATE NOT NULL,
+    fecha_devolucion DATE NOT NULL,
+    id_socio VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_socio) REFERENCES Socio(id_socio)
+);
+
+CREATE TABLE Autor (
+    Id_Autor VARCHAR(10) PRIMARY KEY,
+    id_libro VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_libro) REFERENCES Libro(id_libro)
+);

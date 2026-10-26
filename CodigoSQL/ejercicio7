@@ -1,0 +1,32 @@
+CREATE TABLE Genero_Musical (
+    id VARCHAR(10) PRIMARY KEY
+);
+
+CREATE TABLE Cantante (
+    identificador VARCHAR(10) PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    pais VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Disco (
+    id VARCHAR(10) PRIMARY KEY,
+    titulo VARCHAR(50) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    id_genero VARCHAR(10) NOT NULL,
+    identificador VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_genero) REFERENCES Genero_Musical(id),
+    FOREIGN KEY (identificador) REFERENCES Cantante(identificador)
+);
+
+CREATE TABLE Cancion (
+    Identificador VARCHAR(10) PRIMARY KEY,
+    titulo VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Tiene (
+    id VARCHAR(10) NOT NULL,
+    identificador VARCHAR(10) NOT NULL,
+    posicion INT NOT NULL,
+    FOREIGN KEY (id) REFERENCES Disco(id),
+    FOREIGN KEY (identificador) REFERENCES Cancion(Identificador)
+);

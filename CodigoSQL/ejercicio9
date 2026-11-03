@@ -1,0 +1,68 @@
+CREATE TABLE Propietario (
+    cedula VARCHAR(15) PRIMARY KEY,
+    nombres VARCHAR(100) NOT NULL,
+    direccion VARCHAR(200)
+);
+
+CREATE TABLE Telefonos (
+    telefono VARCHAR(15),
+    cedula VARCHAR(15),
+    PRIMARY KEY (telefono, cedula),
+    FOREIGN KEY (cedula) REFERENCES Propietario(cedula)
+);
+
+CREATE TABLE Familiar (
+    cedula VARCHAR(15) PRIMARY KEY,
+    nombres VARCHAR(100) NOT NULL,
+    cedula_propietario VARCHAR(15),
+    FOREIGN KEY (cedula_propietario) REFERENCES Propietario(cedula)
+);
+
+CREATE TABLE Telf_familiar (
+    telefono VARCHAR(15),
+    cedula VARCHAR(15),
+    PRIMARY KEY (telefono, cedula),
+    FOREIGN KEY (cedula) REFERENCES Familiar(cedula)
+);
+
+CREATE TABLE Mascota (
+    id INT PRIMARY KEY,
+    fecha_Nacimiento DATE,
+    nombre VARCHAR(50) NOT NULL,
+    tipo VARCHAR(50),
+    cedula VARCHAR(15),
+    FOREIGN KEY (cedula) REFERENCES Propietario(cedula)
+);
+
+CREATE TABLE Personal (
+    cedula VARCHAR(15) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    codigo VARCHAR(20)
+);
+
+CREATE TABLE Veterinario (
+    cedula VARCHAR(15) PRIMARY KEY,
+    nombre VARCHAR(100),
+    codigo VARCHAR(20),
+    fecha_alta DATE,
+    especialidad VARCHAR(100),
+    FOREIGN KEY (cedula) REFERENCES Personal(cedula)
+);
+
+CREATE TABLE Auxiliar (
+    cedula VARCHAR(15) PRIMARY KEY,
+    nombre VARCHAR(100),
+    codigo VARCHAR(20),
+    base_cotizacion DECIMAL(10,2),
+    FOREIGN KEY (cedula) REFERENCES Personal(cedula)
+);
+
+CREATE TABLE Consulta (
+    fecha_atencion DATETIME,
+    id INT,
+    diagnostico TEXT,
+    cedula VARCHAR(15),
+    PRIMARY KEY (fecha_atencion, id),
+    FOREIGN KEY (id) REFERENCES Mascota(id),
+    FOREIGN KEY (cedula) REFERENCES Veterinario(cedula)
+);

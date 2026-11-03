@@ -2,7 +2,7 @@
 
 ### Tabla de Navegación
 
-| Módulo | Diagrama Entidad-Relación[cite: 16] | Diagrama Relacional[cite: 15] | Código SQL[cite: 14] |
+| Módulo | Diagrama Entidad-Relación | Diagrama Relacional | Código SQL |
 | :--- | :--- | :--- | :--- |
 | **Ejercicio 1** | [ejercicio1.md](./diagrama_entidad_relacion/ejercicio1.md) | [ejercicio1.md](./Diagrama_Relacional/ejercicio1.md) | [ejercicio1](./CodigoSQL/ejercicio1) |
 | **Ejercicio 2** | [ejercicio2.md](./diagrama_entidad_relacion/ejercicio2.md) | [ejercicio2.md](./Diagrama_Relacional/ejercicio2.md) | [ejercicio2](./CodigoSQL/ejercicio2) |
